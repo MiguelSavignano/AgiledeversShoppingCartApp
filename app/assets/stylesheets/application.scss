@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "materialize/components/color";
+$primary-color: color("amber", "darken-1") !default;
+$secondary-color: color( "pink", "darken-4") !default;
+$button-color: color("blue", "base") !default;
+ @import "materialize";

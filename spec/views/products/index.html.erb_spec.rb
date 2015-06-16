@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "articles/index", type: :view do
+RSpec.describe "products/index", type: :view do
   before(:each) do
-    assign(:articles, [
-      Article.create!(
+    assign(:products, [
+      Product.create!(
         :title => "Title",
         :image_url => "Image Url",
         :image_name => "Image Name"
       ),
-      Article.create!(
+      Product.create!(
         :title => "Title",
         :image_url => "Image Url",
         :image_name => "Image Name"
@@ -16,7 +16,7 @@ RSpec.describe "articles/index", type: :view do
     ])
   end
 
-  it "renders a list of articles" do
+  it "renders a list of products" do
     render
     assert_select "tr>td", :text => "Title".to_s, :count => 2
     assert_select "tr>td", :text => "Image Url".to_s, :count => 2

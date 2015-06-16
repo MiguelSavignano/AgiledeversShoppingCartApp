@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "articles/show", type: :view do
+RSpec.describe "products/show", type: :view do
   before(:each) do
-    @article = assign(:article, Article.create!(
+    @product = assign(:product, Product.create!(
       :title => "Title",
       :image_url => "Image Url",
       :image_name => "Image Name"

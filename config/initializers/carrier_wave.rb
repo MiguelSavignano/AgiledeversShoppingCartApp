@@ -6,8 +6,3 @@ CarrierWave.configure do |config|
   }
   config.fog_directory  = 'agiledeversshoppingcart'
 end
-<<<<<<< HEAD
-=======
-
-
->>>>>>> master

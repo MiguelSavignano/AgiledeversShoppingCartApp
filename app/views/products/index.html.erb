@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
-
-<div class="row">
   <div class="col-xs-6 col-xs-offset-3">
     <% @products.each do |product| %>
       <%= render "product_row", product: product %>
     <% end %>
   </div>
-</div>
 <br>
-<div id="cart_grid" >
-	<%= render :partial => '/layouts/shopping_cart_item', :collection => @shopping_cart.shopping_cart_items %>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-2">
+      <h3>Cart</h3>
+        <div id="cart_grid" class="well">
+			<%= render :partial => '/layouts/shopping_cart_item', :collection => @shopping_cart.shopping_cart_items %>
+		</div>
+	  </div>
+	</div>
 </div>
 <%= link_to 'New Product', new_product_path %>

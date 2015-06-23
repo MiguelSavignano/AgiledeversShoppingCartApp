@@ -70,13 +70,12 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :image_url, :image_name)
+      params.require(:product).permit(:title, :image_url, :image_name, :price)
     end
 
 
     private
     def extract_shopping_cart
-      binding.pry
       shopping_cart_id = session[:shopping_cart_id]
       @shopping_cart = session[:shopping_cart_id] ? ShoppingCart.find(shopping_cart_id) : ShoppingCart.create
       session[:shopping_cart_id] = @shopping_cart.id

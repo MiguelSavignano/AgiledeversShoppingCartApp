@@ -18,7 +18,6 @@ class ShoppingCartsController < ApplicationController
 
   private
   def extract_shopping_cart
-    binding.pry
     shopping_cart_id = session[:shopping_cart_id]
     @shopping_cart = session[:shopping_cart_id] ? ShoppingCart.find(shopping_cart_id) : ShoppingCart.create
     session[:shopping_cart_id] = @shopping_cart.id

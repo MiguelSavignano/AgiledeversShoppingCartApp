@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :is_admin , only: [:new,:create]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_filter :extract_shopping_cart
 
@@ -79,5 +81,12 @@ class ProductsController < ApplicationController
       shopping_cart_id = session[:shopping_cart_id]
       @shopping_cart = session[:shopping_cart_id] ? ShoppingCart.find(shopping_cart_id) : ShoppingCart.create
       session[:shopping_cart_id] = @shopping_cart.id
+    end
+
+    private
+    def is_admin
+      if current_user.role !="admin"
+        redirect_to products_path
+      end
     end
 end

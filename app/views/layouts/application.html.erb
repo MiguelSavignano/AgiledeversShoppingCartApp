@@ -9,7 +9,15 @@
     <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
 </head>
 <body>
-
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class=" brand-logo mdi-social-school">PrepareMyExam </a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down">
+         <li class="active"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      </ul>
+    </div>
+  </nav>
 <%= yield %>
 
 </body>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/' => 'products#index', as: :redirect 
   resources :products
   devise_for :users
   resource :shopping_cart

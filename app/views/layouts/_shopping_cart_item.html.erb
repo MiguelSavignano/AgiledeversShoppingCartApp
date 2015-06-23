@@ -1,5 +1,9 @@
 <div>
-  <div><%= shopping_cart_item.item.title %> <%= number_to_currency shopping_cart_item.item.price %></div>
+  <div><%= shopping_cart_item.item.title %>
+   <%= number_to_currency shopping_cart_item.item.price %>
+    X 
+   <%= shopping_cart_item.quantity %>
+   </div>
 </div>
 <% if shopping_cart_item ==  @shopping_cart.shopping_cart_items.last%>
 <div><b>Total:</b><%= number_to_currency @shopping_cart.total %></div>

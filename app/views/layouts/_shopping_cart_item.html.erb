@@ -1,10 +1,29 @@
-<div>
-  <div><%= shopping_cart_item.item.title %>
-   <%= number_to_currency shopping_cart_item.item.price %>
-    X 
-   <%= shopping_cart_item.quantity %>
-   </div>
-</div>
+<div class="panel-body">
+          <div class="row">
+            <div class="col-xs-2"><img class="img-responsive" src="<%= shopping_cart_item.item.image_url %>">
+            </div>
+            <div class="col-xs-4">
+              <h4 class="product-name"><strong><%= shopping_cart_item.item.title %></strong></h4>
+            </div>
+            <div class="col-xs-6">
+                <h6><strong><%= number_to_currency shopping_cart_item.item.price %> <span class="text-muted">x</span></strong> <%= shopping_cart_item.quantity %></h6>
+            </div>
+          </div>
+          <hr>
+        </div>
+
+
 <% if shopping_cart_item ==  @shopping_cart.shopping_cart_items.last%>
-<div><b>Total:</b><%= number_to_currency @shopping_cart.total %></div>
+        <div class="panel-footer">
+          <div class="row text-center">
+            <div class="col-xs-6">
+              <h4 class="text-right">Total <strong><%= number_to_currency @shopping_cart.total %></strong></h4>
+            </div>
+            <div class="col-xs-4">
+              <button type="button" class="btn btn-success btn-block">
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
 <% end %>

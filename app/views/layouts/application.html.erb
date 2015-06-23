@@ -20,7 +20,9 @@
       <a class="navbar-brand" href="#">ShoppingCartApp</a>
     </div>
       <ul class="nav navbar-nav navbar-right">        
+        <%if !current_user.nil? && current_user.role =="admin"  %>
           <li><%= link_to 'New Product', new_product_path %></li>
+        <%end %>
           <li class="active"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
       </ul>
     </div><!-- /.navbar-collapse -->

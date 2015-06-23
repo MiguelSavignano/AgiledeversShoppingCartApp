@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-  # <<: *default
-  # database: ShoppingCart_production
-  # username: ShoppingCart
-  # password: <%= ENV['SHOPPINGCART_DATABASE_PASSWORD'] %>
+production:
+  <<: *default
+  database: ShoppingCart_production
+  username: postgres
+  password: <%= ENV['SHOPPINGCART_DATABASE_PASSWORD'] %>

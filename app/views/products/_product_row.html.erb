@@ -4,6 +4,7 @@
       <h4><%= product.title %></small></h4>
     </div>
     <div class="col-xs-4">
+  <div><%= link_to 'Add to cart', shopping_cart_path(:product_id => product), :method => 'POST', remote: true %></div>
      
     </div>
   </div>

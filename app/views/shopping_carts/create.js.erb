@@ -1,0 +1,2 @@
+// alert("hola");
+$('#cart_grid').html("<%= escape_javascript(render :partial => '/layouts/shopping_cart_item', :collection => @shopping_cart.shopping_cart_items ) %>")

@@ -1,19 +1,6 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-  <strong>Image name:</strong>
-  <%= @product.image_name %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <div class="col-xs-6 col-xs-offset-3">
+  	<%= render "product_row", product: @product %>
+	<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-success" %> 
+	<%= link_to 'Back', products_path, class: "btn btn-success " %>
+  </div>
